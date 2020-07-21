@@ -1,57 +1,75 @@
-# rasp_test_1
+## Control moving light with OLA and OpenCV on Raspberry PI Zero W with PICamera
 
-My first test with raspberry pi
+# My scenario
 
-=== Setup ===
+- Samsung Eco 32 GB mmc with aspberry Pi OS (32-bit) with desktop and recommended software  https://www.raspberrypi.org/downloads/raspberry-pi-os/
+- Briteq BT-70l clone moving light https://briteq-lighting.com/bt-70ls
+- USB-2-DMX cable https://www.amazon.it/DSD-TECH-Adattatore-Controller-apparecchio-Illuminazione/dp/B07WV6P5W6
 
+# Setup Raspberry Pi and OLA
+
+```
 sudo su
 
 raspi-config
 
-  * camera
-  * ssh
-  * vnc
+  * enable camera
+  * enable ssh
+  * enable vnc
 
 apt-get update && apt-get upgrade
 
-=== OLA for Moving Head ===
-
 apt-get install ola
 
-# enabled = false
+# disable this (thx to https://youtu.be/3rJIqyxE3aY)
 
 sed -i 's/enabled = true/enabled = false/' /etc/ola/ola-opendmx.conf
 sed -i 's/enabled = true/enabled = false/' /etc/ola/ola-usbserial.conf
 
-# enabled = true
+# enabled this
 
 sed -i 's/enabled = false/enabled = true/' /etc/ola/ola-ftdidmx.conf
 
 # connect moving head
-# Add Universe 
+# Add Universe using th web interface http://192.168.1.19:9090/ola.html
 
---> http://192.168.1.19:9090/ola.html
---> Reload Plugins
---> Add Universe
+### Reload Plugins
+### Add Universe: id=1, name=test, device=FT232R USB UART with serial number : AB0K9VXG
 
-  * id=1 
-  * name=test
-  * device=FT232R USB UART with serial number : AB0K9VXG
+```
 
+# Motion tracking with OpenCV
 
-=== Motion tracking ===
+Thanks to: https://answers.opencv.org/question/200861/drawing-a-rectangle-around-a-color-as-shown/
 
-Using this; https://answers.opencv.org/question/200861/drawing-a-rectangle-around-a-color-as-shown/
-
-### Preprequisites
-
-# Get packages required for OpenCV
+```
+# Packages required for OpenCV
 
 sudo apt-get -y install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
 sudo apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
 sudo apt-get -y install libxvidcore-dev libx264-dev
 sudo apt-get -y install qt4-dev-tools libatlas-base-dev
 
-# Need to get an older version of OpenCV because version 4 has errors
+# Older version of OpenCV because version 4 has errors
 pip3 install opencv-python==3.4.6.27
+```
 
+# Testing: testsocket.py
+
+Listen on socket 10002 on ip 192.168.1.19 for tcp pakets, and runs ola_streaming_client (comes with OpenCv) accordingly, ie:
+
+ola_streaming_client -u 1 -d 85,,50  <-- 85 left-right; 50 up-down
+
+```
+python testsocket.py
+```
+
+# Testing: color.py
+
+Capture video from the picamea, for each frame:
+ - draws a rectangle on the blue object
+ - gets the x/y rectangle center coordinates
+ - moves the moving head accordingly
+```
+python color.py
+```
