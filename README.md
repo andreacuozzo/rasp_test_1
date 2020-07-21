@@ -72,5 +72,5 @@ Capture video from the picamea, for each frame:
  - gets the x/y rectangle center coordinates
  - moves the moving head accordingly
 ```
-python color.py
+python3 color.py
 ```
