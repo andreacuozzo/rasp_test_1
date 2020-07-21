@@ -57,7 +57,7 @@ pip3 install opencv-python==3.4.6.27
 
 # Testing: testsocket.py
 
-Listen on socket 10002 on ip 192.168.1.19 for tcp pakets, and runs ola_streaming_client (comes with OpenCv) accordingly, ie:
+Listens on socket 10002 on ip 192.168.1.19 for tcp pakets, and runs ola_streaming_client (comes with OpenCv) accordingly, ie:
 
 ola_streaming_client -u 1 -d 85,,50  <-- 85 left-right; 50 up-down
 
@@ -67,9 +67,9 @@ python testsocket.py
 
 # Testing: color.py
 
-Capture video from the picamea, for each frame:
+Capture video from the picamera, and for each frame:
  - draws a rectangle on the blue object
- - gets the x/y rectangle center coordinates
+ - gets the rectangle center coordinates
  - moves the moving head accordingly
 ```
 python3 color.py
