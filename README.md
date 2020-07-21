@@ -1,21 +1,21 @@
 ## Control moving light with OLA and OpenCV on Raspberry PI Zero W with PICamera
 
-# My scenario
+## My scenario
 
-- Samsung Eco 32 GB mmc with aspberry Pi OS (32-bit) with desktop and recommended software  https://www.raspberrypi.org/downloads/raspberry-pi-os/
+- Samsung Eco 32 GB mmc with Raspberry Pi OS (32-bit) with desktop and recommended software  https://www.raspberrypi.org/downloads/raspberry-pi-os/
 - Briteq BT-70l clone moving light https://briteq-lighting.com/bt-70ls
 - USB-2-DMX cable https://www.amazon.it/DSD-TECH-Adattatore-Controller-apparecchio-Illuminazione/dp/B07WV6P5W6
 
-# Setup Raspberry Pi and OLA
+## Setup Raspberry Pi and OLA
 
 ```
 sudo su
 
 raspi-config
 
-  * enable camera
-  * enable ssh
-  * enable vnc
+  ## enable camera
+  ## enable ssh
+  ## enable vnc
 
 apt-get update && apt-get upgrade
 
