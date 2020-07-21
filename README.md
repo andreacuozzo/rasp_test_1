@@ -1,4 +1,4 @@
-## Control moving light with OLA and OpenCV on Raspberry PI Zero W with PICamera
+## Control DMX moving light with OLA and OpenCV on Raspberry PI Zero W with PICamera
 
 ## My scenario
 
