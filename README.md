@@ -1,5 +1,7 @@
 ## Control DMX moving light with OLA and OpenCV on Raspberry PI Zero W with PICamera
 
+Just started playing with it, I wouldn't touch this guide/code with a stick.
+
 ## My scenario
 
 - Raspberry PI Zero W with Raspberry PI Camera Rev. 1.3 https://www.amazon.it/Modulo-fotocamera-webcam-supporta-Raspberry/dp/B0748FZXW3
