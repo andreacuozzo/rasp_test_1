@@ -27,7 +27,7 @@ apt-get install ola
 sed -i 's/enabled = true/enabled = false/' /etc/ola/ola-opendmx.conf
 sed -i 's/enabled = true/enabled = false/' /etc/ola/ola-usbserial.conf
 
-# enabled this
+# enable this
 
 sed -i 's/enabled = false/enabled = true/' /etc/ola/ola-ftdidmx.conf
 
