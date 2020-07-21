@@ -34,8 +34,8 @@ sed -i 's/enabled = false/enabled = true/' /etc/ola/ola-ftdidmx.conf
 # connect moving head
 # Add Universe using th web interface http://192.168.1.19:9090/ola.html
 
-### Reload Plugins
-### Add Universe: id=1, name=test, device=FT232R USB UART with serial number : AB0K9VXG
+ ## Reload Plugins
+ ## Add Universe: id=1, name=test, device=FT232R USB UART with serial number : AB0K9VXG
 
 ```
 
