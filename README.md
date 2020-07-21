@@ -3,7 +3,7 @@
 ## My scenario
 
 - Raspberry PI Zero W with Raspberry PI Camera Rev. 1.3 https://www.amazon.it/Modulo-fotocamera-webcam-supporta-Raspberry/dp/B0748FZXW3
-- Samsung Eco 32 GB mmc with Raspberry Pi OS (32-bit) with desktop and recommended software  https://www.raspberrypi.org/downloads/raspberry-pi-os/
+- Samsung Eco 32 Evo Plus mmc with Raspberry Pi OS (32-bit) with desktop and recommended software  https://www.raspberrypi.org/downloads/raspberry-pi-os/
 - Briteq BT-70l clone moving light https://briteq-lighting.com/bt-70ls
 - USB-2-DMX cable https://www.amazon.it/DSD-TECH-Adattatore-Controller-apparecchio-Illuminazione/dp/B07WV6P5W6
 
